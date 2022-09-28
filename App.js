@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import {HorizontalView} from './src/components/HorizontalView';
+import {VerticalScroll} from './src/components/VerticalScroll';
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <HorizontalView />
+      <VerticalScroll />
     </SafeAreaView>
   );
 }
