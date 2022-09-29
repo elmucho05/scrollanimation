@@ -2,15 +2,17 @@ import React from 'react';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import VerticalViewPager from 'react-native-vertical-view-pager';
  
-const { width, height } = Dimensions.get('window');
+let screenWidth = Dimensions.get('window').width;
+let screenHeight = Dimensions.get('window').height;
  
 export const VerticalScroll= () =>{
         return (
             <VerticalViewPager
-                showsVerticalScrollIndicator={false}
+            contentContainerStyle={{flexGrow: 1}}    
+            showsVerticalScrollIndicator={false}
                 pagingEnabled={true}
                 >
-                <View style={[styles.page_container, {backgroundColor: 'pink'}]}>
+                <View style={[styles.container1, {backgroundColor: 'pink'}]}>
                     <Text>Page1: Open up App.js to start working on your app!</Text>
                 </View>
                 <View style={[styles.page_container, {backgroundColor: 'olive'}]}>
@@ -24,11 +26,19 @@ export const VerticalScroll= () =>{
     }
  
 const styles = StyleSheet.create({
+    container1: {
+        backgroundColor: '#5f9ea0',
+        flex: 1,
+        
+        height: screenHeight,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
     page_container: {
         flex:1,
         justifyContent: 'center',
         alignItems: 'center',
-        height: height,
-        width: width
+        width: screenWidth,
+        height: screenHeight
     }
 });
